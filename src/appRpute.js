@@ -34,16 +34,16 @@ export function AppRoute(){
         <Routes>
           <Route path="/" element={ <Main /> }>
             <Route index element={ <Home/> } />
-            <Route path=":isLoggin/:userId/login" element={ <Login /> }/>
-            <Route path="login/register" element={<Register/>} />
-            <Route path=":isLoggin/:userId/product/see-product/:product_id" element={ <SeeProduct /> }/>
-            <Route path=":isLoggin/:userId/carShop-List" element={ <CarShopList/> } />
-            <Route path=":categories" element={
+            <Route exact path=":isLoggin/:userId/login" element={ <Login /> }/>
+            <Route exact path="login/register" element={<Register/>} />
+            <Route exact path=":isLoggin/:userId/product/see-product/:product_id" element={ <SeeProduct /> }/>
+            <Route exact path=":isLoggin/:userId/carShop-List" element={ <CarShopList/> } />
+            <Route exact path=":categories" element={
               <ListCategories>
                 { (categories.length === 0) ? <SkeletoMultiple /> : <AllCardsCategories objects={categories}/> }
               </ListCategories> } 
             />
-            <Route path="categories/products/:category_id" element={<ShowProducts/>} />
+            <Route exact path="categories/products/:category_id" element={<ShowProducts/>} />
           </Route>
         </Routes>
       </Router>

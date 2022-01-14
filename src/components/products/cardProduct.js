@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, {useState} from 'react';
+//imports of Material UI
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,11 +13,12 @@ import  AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 //import of components
 import AddProductToCar from '../carShop/addtoCarShop';
+import Isloggout from '../layouts/isLoggout';
 //import from react-router
 import { Link } from 'react-router-dom';
 
 export default function CarProduct({product}) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -47,12 +49,15 @@ export default function CarProduct({product}) {
           readOnly
         />
         <CardActions>
-          <Link to={`/${false}/${0}/product/see-product/${product.id}`}>
+          <Link to={`/store-practice/${true}/${0}/product/see-product/${product.id}`}>
             <IconButton size="large" aria-label="BuyCar" color="secondary">
                   <VisibilityIcon />
             </IconButton>
           </Link>
-          <AddProductToCar open={open} handleClose={handleClose} product={product}/>
+          {true
+            ?<Isloggout open={open} handleClose={handleClose} />
+            :<AddProductToCar open={open} handleClose={handleClose} product={product}/>
+          }
           <IconButton onClick={handleOpen} size="large" aria-label="BuyCar" color="success">
             <AddShoppingCartIcon />
           </IconButton>

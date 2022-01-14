@@ -135,7 +135,7 @@ export default function Login(){
                                     spacing={4}
                                     direction='row'
                                 >
-                                    <Link className="link" to='/login/register'>
+                                    <Link className="link" to='/store-practice/login/register'>
                                         <Button color="secondary" variant="contained" endIcon={<AppRegistrationIcon/>}>
                                             Register
                                         </Button>

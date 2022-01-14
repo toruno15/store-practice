@@ -155,7 +155,7 @@ export default function NavBar( { children } ) {
             <List>
               <ListItem>
                 <ListItemIcon>
-                  <Link className="link" to="/" >
+                  <Link className="link" to="/store-practice" >
                     <IconButton size="large" aria-label="home" color="inherit">
                       <HomeIcon />
                     </IconButton>
@@ -166,7 +166,7 @@ export default function NavBar( { children } ) {
               {isLoginUser.state
                 ? <ListItem>
                   <ListItemIcon>
-                    <Link className="link" to={`${isLoginUser.state}/${isLoginUser.userId}/carShop-List`}>
+                    <Link className="link" to={`/store-practice/${isLoginUser.state}/${isLoginUser.userId}/carShop-List`}>
                       <IconButton size="large" aria-label="BuyCar" color="inherit">
                         <Badge badgeContent={addNew} color="error">
                           <ShoppingCartIcon/>
@@ -180,7 +180,7 @@ export default function NavBar( { children } ) {
               }
               <ListItem>
                 <ListItemIcon>
-                  <Link className="link" to="/categories">
+                  <Link className="link" to="categories">
                     <IconButton>
                       <StyleIcon/>
                     </IconButton>

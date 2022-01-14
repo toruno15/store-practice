@@ -204,7 +204,7 @@ export default function Register(){
                     spacing={4}
                     direction='row'
                 >
-                    <Link className="link" to="/false/0/login">
+                    <Link className="link" to="/store-practice/false/0/login">
                         <Button color="secondary" variant="contained" endIcon={<DoNotDisturbIcon/>}>
                             cancel
                         </Button>

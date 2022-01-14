@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export default function AllCardsCategoriesHome( {objects} ) {
     const lista = objects.slice(0, 4).map((objeto) =>
         <div key={objeto.id} class="card">
-            <Link className='link' to={`/categories/products/${objeto.id}`}>
+            <Link className='link' to={`/store-practice/categories/products/${objeto.id}`}>
                 <CardCategory category={objeto}/>
             </Link>
         </div>

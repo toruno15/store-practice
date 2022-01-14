@@ -32,7 +32,7 @@ export function AppRoute(){
     return(
       <Router>
         <Routes>
-          <Route path="/" element={ <Main /> }>
+          <Route path="/store-practice" element={ <Main /> }>
             <Route index element={ <Home/> } />
             <Route exact path=":isLoggin/:userId/login" element={ <Login /> }/>
             <Route exact path="login/register" element={<Register/>} />

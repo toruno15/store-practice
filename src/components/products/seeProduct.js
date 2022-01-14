@@ -11,16 +11,18 @@ import './stylesProducts/cardSee.css';
 //imports of components
 import BuyProduct from '../carShop/BuyProduct';
 import AddProductToCar from '../carShop/addtoCarShop';
+import IsLoggout from '../layouts/isLoggout';
 //imports of icons
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import  AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 //imports of providers
 import getProduct from '../../services/product/getProduct';
 import { useParams } from 'react-router-dom';
+import Isloggout from '../layouts/isLoggout';
 
 export default function SeeProduct(){ 
   const [product, setProduct] = useState();
-  const { product_id } = useParams();
+  const {product_id } = useParams();
   
   const getNewProduct = () => {
     getProduct(product_id)
@@ -124,6 +126,8 @@ const Puntuation = ( {ranking} ) =>{
 
 const Interaction = ({product}) => {
   const [openBuy, setOpenBuy] = useState(false);
+  const {isLoggin} = useParams();
+  const [stateLog, setStateLog] = useState((isLoggin == 'true'));
 
   //funstions of states
   const handleOpenBuy = () => {
@@ -144,7 +148,10 @@ const Interaction = ({product}) => {
 
   return (
     <React.Fragment>
-      <BuyProduct open={openBuy} handleClose={handleCloseBuy} index={product.id} />
+      { !stateLog
+        ? <Isloggout open={openBuy} handleClose={handleCloseBuy} />
+        : <BuyProduct open={openBuy} handleClose={handleCloseBuy} index={product.id} /> 
+      }
       <Button sx={{ m: 1,
           maxWidth: 300
         }}
@@ -156,7 +163,10 @@ const Interaction = ({product}) => {
       >
         Buy
       </Button>
-      <AddProductToCar open={open} handleClose={handleClose} product={product}/>
+      { !stateLog
+        ? <Isloggout open={open} handleClose={handleClose} />
+        : <AddProductToCar open={open} handleClose={handleClose} product={product}/>
+      }
       <Button sx={{ m: 1,
           maxWidth: 300
         }} 

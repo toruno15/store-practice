@@ -14,7 +14,7 @@ export default function ShowProducts(){
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState([]);
 
-    const { categoryId } = useParams();
+    const { category_id } = useParams();
 
     useEffect(() =>{
         getNewCategory();
@@ -22,8 +22,9 @@ export default function ShowProducts(){
     }, []);
 
     const getNewCategory = () =>{
-        getCategory(categoryId).then(data => {
+        getCategory(parseInt(category_id)).then(data => {
             setCategory(data);
+            console.log(data);
         });
     };
 

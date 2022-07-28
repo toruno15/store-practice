@@ -6,16 +6,16 @@
       "userName": "userAdmin",
       "type": "admin",
       "age": 21,
-      "email": "giotoruno10@gmail.com",
+      "email": "userRando@gmail.com",
       "password": "12345678"
     },
     {
       "id": 2,
       "name": "jose",
-      "userName": "toruno15",
+      "userName": "userRandom",
       "type": "client",
       "age": 21,
-      "email": "cruzgiovanni2000@gmaiil.com",
+      "email": "random@gmail.com",
       "password": "87654321"
     },
     {
